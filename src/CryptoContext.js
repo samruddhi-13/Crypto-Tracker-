@@ -20,7 +20,6 @@ const CryptoContext = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [watchlist, setWatchlist] = useState([]);
 
-  // onSnapshot Firestore
   useEffect(() => {
     if (user) {
       const coinRef = doc(db, "watchlist", user?.uid);

@@ -28,7 +28,6 @@ function Header() {
   const classes = useStyles();
   const { currency, setCurrency, user } = CryptoState();
 
-  // History Hooks
   const history = useHistory();
 
   return (
@@ -43,26 +42,19 @@ function Header() {
             >
               Crypto Hunter
             </Typography>
-    
             <Select
               variant="outlined"
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={currency}
-              style={
-                { width: 100,
-                  height: 40, 
-                  marginLeft: 15 
-                }}
-              onChange={
-                (e) => setCurrency(e.target.value)
-              }
+              style={{ width: 85, height: 40 }}
+              onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
 
-           {user ? <UserSidebar /> :  <AuthModal/>}
+            {user ? <UserSidebar /> : <AuthModal />}
           </Toolbar>
         </Container>
       </AppBar>

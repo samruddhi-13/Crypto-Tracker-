@@ -40,7 +40,7 @@ function Header() {
               variant="h6"
               className={classes.title}
             >
-              Crypto Hunter
+              Crypto Tracker
             </Typography>
             <Select
               variant="outlined"

@@ -1,4 +1,9 @@
-import { Button, LinearProgress, makeStyles, Typography,} from "@material-ui/core";
+import {
+  Button,
+  LinearProgress,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -52,7 +57,7 @@ const CoinPage = () => {
     try {
       await setDoc(
         coinRef,
-        { coins: watchlist.filter((wish) => wish !== coin?.id) },
+        { coins: watchlist.filter((watch) => watch !== coin?.id) },
         { merge: true }
       );
 
@@ -72,6 +77,7 @@ const CoinPage = () => {
 
   useEffect(() => {
     fetchCoin();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const useStyles = makeStyles((theme) => ({
